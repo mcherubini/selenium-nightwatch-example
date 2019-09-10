@@ -1,0 +1,23 @@
+{
+  "name": "selenium-example",
+  "version": "1.0.0",
+  "description": "prueba de selenium con node",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --inspect-brk=9229 node_modules/cucumber/bin/cucumber-js --require cucumber.conf.js --require src/steps-definitions -f node_modules/cucumber-pretty -f json:reports/cucumber_report.json",
+    "generate-report": "node generate-report.js",
+    "debug" : "node --inspect node_modules/cucumber/bin/cucumber-js --require cucumber.conf.js --require src/steps-definitions -f node_modules/cucumber-pretty -f json:reports/cucumber_report.json"
+  },
+  "author": "Michele Cherubini",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "76.0.0",
+    "nightwatch": "^1.1.13",
+    "selenium-standalone": "^6.15.3",
+    "geckodriver": "1.16.2",
+    "nightwatch-api": "2.3.0",
+    "cucumber": "^5.1.0",
+    "cucumber-pretty": "^1.5.2",
+    "cucumber-html-reporter": "^5.0.0"
+  }
+}
