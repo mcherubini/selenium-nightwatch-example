@@ -12,6 +12,7 @@ const {
 setDefaultTimeout(60000);
 
 BeforeAll(async () => {
+  console.log("The environment passed is:" + process.env.NIGHTWATCH_ENV);
   await startWebDriver({ env: process.env.NIGHTWATCH_ENV || 'default'});
   await createSession();
 });

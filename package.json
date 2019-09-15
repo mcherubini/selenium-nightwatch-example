@@ -4,7 +4,8 @@
   "description": "prueba de selenium con node",
   "main": "index.js",
   "scripts": {
-    "test": "node  node_modules/cucumber/bin/cucumber-js  --require cucumber.conf.js --require src/steps-definitions -f node_modules/cucumber-pretty -f json:reports/cucumber_report.json",
+    "test": "cross-env NIGHTWATCH_ENV=google_secure node node_modules/cucumber/bin/cucumber-js --tags @test1 --require cucumber.conf.js --require src/steps-definitions -f node_modules/cucumber-pretty -f json:reports/cucumber_report.json",
+    "saucelabs:test": "cross-env NIGHTWATCH_ENV=saucelabs_test node  node_modules/cucumber/bin/cucumber-js --tags @test1 --require cucumber.conf.js --require src/steps-definitions -f node_modules/cucumber-pretty -f json:reports/cucumber_report.json",
     "generate-report": "node generate-report.js",
     "debug": "node --inspect node_modules/cucumber/bin/cucumber-js --require cucumber.conf.js --require src/steps-definitions -f node_modules/cucumber-pretty -f json:reports/cucumber_report.json"
   },
@@ -15,6 +16,7 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
     "chromedriver": "76.0.1",
+    "cross-env": "^5.2.1",
     "cucumber": "^5.1.0",
     "cucumber-html-reporter": "^5.0.0",
     "cucumber-pretty": "^1.5.2",
