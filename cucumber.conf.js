@@ -1,4 +1,4 @@
-const fs = require('fs');
+const {fs} = require('fs');
 const { setDefaultTimeout, After, AfterAll, BeforeAll } = require('cucumber');
 const {
   createSession,
@@ -12,7 +12,7 @@ const {
 setDefaultTimeout(60000);
 
 BeforeAll(async () => {
-  await startWebDriver({ env: process.env.NIGHTWATCH_ENV});
+  await startWebDriver({ env: process.env.NIGHTWATCH_ENV || 'default'});
   await createSession();
 });
 
